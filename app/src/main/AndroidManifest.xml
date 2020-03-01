@@ -31,6 +31,14 @@
         <activity
             android:name=".MainActivity"
             android:label="Übersicht"></activity>
+
+        <activity
+            android:name=".NeueMessungActivity"
+            android:label="Neue Messung"></activity>
+
+        <activity
+            android:name=".NeueMessungBearbeitenActivity"
+            android:label="Neue Messung"></activity>
     </application>
 
 </manifest>

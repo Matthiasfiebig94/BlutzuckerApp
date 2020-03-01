@@ -3,6 +3,7 @@ package com.fiebig.blutzuckerapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textView;
     String server_url = "http://192.168.178.59/blutzuckerapp_api/blutzucker.php?user=1";
     Dialog neueMessung;
-    Button neueMessungBtn;
+    Button neueMessungBtn, neueMessungGeraet;
     ImageView neueMessungClose;
 
     @Override
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        neueMessung = new Dialog(this);
+        neueMessung = new Dialog(this, R.style.Popup);
 
         textView = findViewById(R.id.DBText);
         neueMessungBtn = findViewById(R.id.neueMessungBtn);
@@ -55,10 +56,11 @@ public class MainActivity extends AppCompatActivity {
         neueMessungBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i(null, "hello world");
                 neueMessung.setContentView(R.layout.neue_messung_popup);
                 neueMessung.show();
                 neueMessungClose = (ImageView) neueMessung.findViewById(R.id.neueMessungClose);
+
+                neueMessungGeraet = neueMessung.findViewById(R.id.neueMessungGeraet);
 
                 neueMessungClose.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -66,11 +68,33 @@ public class MainActivity extends AppCompatActivity {
                         neueMessung.dismiss();
                     }
                 });
+
+
+                neueMessungGeraet.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Thread neueMessungThread = new Thread() {
+
+                            @Override
+                            public void run() {
+                                try {
+                                    neueMessung.dismiss();
+                                    super.run();
+                                } catch (Exception e) {
+
+                                } finally {
+
+                                    Intent i = new Intent(MainActivity.this, NeueMessungActivity.class);
+                                    startActivity(i);
+                                    finish();
+                                }
+                            }
+                        };
+                        neueMessungThread.start();
+                    }
+                });
             }
         });
-    }
-
-    public void showNeueMessungPopup(){
 
     }
 }

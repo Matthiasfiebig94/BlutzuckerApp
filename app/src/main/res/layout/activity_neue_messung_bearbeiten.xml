@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible"
+    tools:context=".NeueMessungBearbeitenActivity"
+    tools:visibility="visible">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="187.50dp"
+        android:layout_height="187.50dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="112dp"
+        android:background="@drawable/circle"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/DBText2" />
+
+    <TextView
+        android:id="@+id/DBText2"
+        android:layout_width="237dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="112dp"
+        android:shadowColor="#00FFFFFF"
+        android:shadowRadius="0"
+        android:text="Messwert"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:translationZ="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/neueMessungGegessen"
+        android:layout_width="275dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/rounded_button"
+        android:text="Haben Sie seit der letzten Messung gegessen?"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView2" />
+
+    <ImageView
+        android:id="@+id/neueMessungBearbeitenAbbrechen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="32dp"
+        android:src="@mipmap/icon_close"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/neueMessungNotiz" />
+
+    <ImageView
+        android:id="@+id/neueMessungBearbeitenBestaetigen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="100dp"
+        android:src="@mipmap/icon_accept"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.957"
+        app:layout_constraintStart_toEndOf="@id/neueMessungBearbeitenAbbrechen"
+        app:layout_constraintTop_toBottomOf="@id/neueMessungNotiz" />
+
+    <EditText
+        android:id="@+id/neueMessungNotiz"
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:hint="Notiz einfügen"
+        android:inputType="textPersonName"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/neueMessungGegessen" />
+</androidx.constraintlayout.widget.ConstraintLayout>
