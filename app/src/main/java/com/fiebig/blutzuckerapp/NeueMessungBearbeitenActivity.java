@@ -67,7 +67,7 @@ public class NeueMessungBearbeitenActivity extends AppCompatActivity {
                 lebensmittelSpinner = gegessenPopup.findViewById(R.id.lebensmittelSpinner);
 
                 String[] items = new String[]{"Banane", "Brot", "Traubenzucker"};
-                ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
+                //ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
 
                 lebensmittelPopupClose.setOnClickListener(new View.OnClickListener() {
                     @Override

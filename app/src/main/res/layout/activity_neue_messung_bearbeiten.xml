@@ -15,7 +15,7 @@
         android:layout_marginStart="112dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="112dp"
-        android:background="@drawable/circle"
+        android:background="@drawable/circle_green"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="18sp"
